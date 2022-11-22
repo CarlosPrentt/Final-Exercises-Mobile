@@ -1,0 +1,7 @@
+tests\NavigationTest.class
+util\tests\BaseMobileTest.class
+screens\MapScreen.class
+util\ConfigCapabilities.class
+screens\TutorialScreen.class
+screens\DashBoardScreen.class
+util\screens\BaseScreen.class
