@@ -38,6 +38,9 @@ public class DashBoardScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.disney.wdpro.dlr:id/tab_icon\").descriptionContains(\"More Options, Tab, 5of5\")")
     private AndroidElement menuButton;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.disney.wdpro.dlr:id/tab_animated_icon\")")
+    private AndroidElement addPlanButton;
+
     /**
      * @author Hans.Marquez
      * Navigate to Login Screen from DashBoard Screen.
@@ -62,5 +65,16 @@ public class DashBoardScreen extends BaseScreen {
         }
         click(menuButton);
         return new MenuScreen(driver);
+    }
+
+    public AddPlanScreen goToAddPlanScreen() {
+        if (this.isElementAvailable(dismissWelcome, 25)){
+            click(dismissWelcome);
+        }
+        if (this.isElementAvailable(dismissPreferenceUpdateButton, 25)){
+            click(dismissPreferenceUpdateButton);
+        }
+        click(addPlanButton);
+        return new AddPlanScreen(driver);
     }
 }
